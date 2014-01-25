@@ -15,6 +15,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import epsi.talkative.repository.Comment;
 import epsi.talkative.repository.MockEditorRepository;
 
 @RunWith(ApplicationComposer.class)
@@ -50,6 +51,15 @@ public class ArticlesResourceTest {
                 client.path("editors").path(MockEditorRepository.UNKNOWN_EDITOR).path("articles/www.epsi.fr/i4/myarticle.html/comments").get();
 
                 Assert.assertEquals(403, client.getResponse().getStatus());
+        }
+        
+        @Test
+        public void canPutNewComment() {
+                WebClient client = createWebClient();
+                Comment comment = new Comment("hello everybody", "r0mdau", "romain.dauby@gmail.com");
+                client.path("editors/davidg/articles/www.epsi.fr/i4/myarticle.html").put(comment);
+
+                Assert.assertEquals(201, client.getResponse().getStatus());
         }
 
         private WebClient createWebClient() {

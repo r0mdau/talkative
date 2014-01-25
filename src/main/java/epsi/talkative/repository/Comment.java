@@ -8,6 +8,12 @@ public class Comment {
 		
 	}
 	
+	public Comment(String contenu, String mail, String pseudo){
+		this.contenu = contenu;
+		this.mail = mail;
+		this.pseudo = pseudo;
+	}
+	
 	public void setContenu(String contenu){
 		this.contenu = contenu;
 	}
