@@ -25,6 +25,9 @@ public class ArticlesResource {
     	@Produces({"application/xml", "application/json"})
     	public Response put(Comment com){
         	com.setTimestamp(System.currentTimeMillis());
-    		return Response.status(201).entity(com).build();
+        	if(com.getContenu().isEmpty() || com.getMail().isEmpty() || com.getPseudo().isEmpty())
+        		return Response.status(400).entity(com).build();
+        	else
+        		return Response.status(201).entity(com).build();
     	}
 }

@@ -61,6 +61,14 @@ public class ArticlesResourceTest {
 
                 Assert.assertEquals(201, client.getResponse().getStatus());
         }
+        
+        @Test
+        public void cantPutNewCommentWithEmptyValue() {
+                WebClient client = createWebClient();
+                Comment comment = new Comment("", "r0mdau", "romain.dauby@gmail.com");
+                client.path("editors/davidg/articles/www.epsi.fr/i4/myarticle.html").put(comment);
+                Assert.assertEquals(400, client.getResponse().getStatus());
+        }
 
         private WebClient createWebClient() {
                 WebClient client = WebClient.create("http://localhost:4204/talkative/api");
