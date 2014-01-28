@@ -63,7 +63,7 @@ public class ArticlesResourceTest {
         }
         
         @Test
-        public void cantPutNewCommentWithEmptyValue() {
+        public void cannotPutNewCommentWithEmptyValue() {
                 WebClient client = createWebClient();
                 Comment comment = new Comment("", "r0mdau", "romain.dauby@gmail.com");
                 client.path("editors/davidg/articles/www.epsi.fr/i4/myarticle.html").put(comment);
