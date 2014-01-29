@@ -69,6 +69,14 @@ public class ArticlesResourceTest {
                 client.path("editors/davidg/articles/www.epsi.fr/i4/myarticle.html").put(comment);
                 Assert.assertEquals(400, client.getResponse().getStatus());
         }
+        
+        @Test
+        public void cannotPutNewCommentWithInvalidEmail() {
+                WebClient client = createWebClient();
+                Comment comment = new Comment("coucou", "r0mdau", "romain.dauby@gmail");
+                client.path("editors/davidg/articles/www.epsi.fr/i4/myarticle.html").put(comment);
+                Assert.assertEquals(400, client.getResponse().getStatus());
+        }
 
         private WebClient createWebClient() {
                 WebClient client = WebClient.create("http://localhost:4204/talkative/api");

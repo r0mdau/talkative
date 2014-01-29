@@ -8,7 +8,7 @@ public class Comment {
 		
 	}
 	
-	public Comment(String contenu, String mail, String pseudo){
+	public Comment(String contenu, String pseudo, String mail){
 		this.contenu = contenu;
 		this.mail = mail;
 		this.pseudo = pseudo;
