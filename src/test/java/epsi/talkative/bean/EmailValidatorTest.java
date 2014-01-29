@@ -8,7 +8,7 @@ public class EmailValidatorTest {
     public void emailInvalid() {
             Assert.assertFalse(EmailValidator.validateMail("toto"));
             Assert.assertFalse(EmailValidator.validateMail("toto@gmail"));
-            Assert.assertFalse(EmailValidator.validateMail("toto@gmail"));
+            Assert.assertFalse(EmailValidator.validateMail("toto@gmail.rater."));
     }
 	
 	@Test
