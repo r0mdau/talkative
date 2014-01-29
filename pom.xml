@@ -13,6 +13,49 @@
 	Une personne souhaitant commenter un article, le fera directement sur la page concernée
 	via	le service de Talkative.
 	</description>
+	
+	<developers>
+        <developer>
+            <id>r0mdau</id>
+            <name>Romain Dauby</name>
+            <email>romain.dauby@epsi.fr</email>
+            <organization>EPSI</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>NevinDry</id>
+            <name>Etienne Puissant</name>
+            <email>etienne.puissant@epsi.fr</email>
+            <organization>EPSI</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>deftoni</id>
+            <name>Antoine Rose</name>
+            <email>antoine.rose@epsi.fr</email>
+            <organization>EPSI</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>Clmt</id>
+            <name>Clément Raymondaud</name>
+            <email>clement.raymondaud@epsi.fr</email>
+            <organization>EPSI</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
 
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
