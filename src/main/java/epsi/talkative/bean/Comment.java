@@ -1,4 +1,4 @@
-package epsi.talkative.repository;
+package epsi.talkative.bean;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

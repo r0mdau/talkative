@@ -15,7 +15,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import epsi.talkative.repository.Comment;
+import epsi.talkative.bean.Comment;
 import epsi.talkative.repository.MockEditorRepository;
 
 @RunWith(ApplicationComposer.class)
