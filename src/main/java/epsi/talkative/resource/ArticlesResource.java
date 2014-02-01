@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import epsi.talkative.bean.Comment;
-import epsi.talkative.bean.EmailValidator;
+import epsi.talkative.bean.StringValidator;
 
 public class ArticlesResource {
 
@@ -31,7 +31,7 @@ public class ArticlesResource {
 		if (com.getContenu().isEmpty() || com.getMail().isEmpty()
 				|| com.getPseudo().isEmpty())
 			return Response.status(400).entity(com).build();
-		else if (!EmailValidator.validateMail(com.getMail()))
+		else if (!StringValidator.validateMail(com.getMail()))
 			return Response.status(400).entity(com).build();
 		else
 			return Response.status(201).entity(com).build();
