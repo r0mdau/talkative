@@ -28,12 +28,11 @@ public class ArticlesResource {
 	@Produces({ "application/xml", "application/json" })
 	public Response put(Comment com) {
 		com.setTimestamp(System.currentTimeMillis());
-		if (com.getContenu().isEmpty() || com.getMail().isEmpty()
-				|| com.getPseudo().isEmpty())
-			return Response.status(400).entity(com).build();
-		else if (!StringValidator.validateMail(com.getMail()))
-			return Response.status(400).entity(com).build();
-		else
+		if (!com.getContenu().isEmpty() && !com.getMail().isEmpty()
+				&& !com.getPseudo().isEmpty()
+				&& StringValidator.validateMail(com.getMail()))
 			return Response.status(201).entity(com).build();
+		else
+			return Response.status(400).entity(com).build();
 	}
 }
