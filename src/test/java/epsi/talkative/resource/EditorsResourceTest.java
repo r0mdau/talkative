@@ -37,8 +37,32 @@ public class EditorsResourceTest {
         public void canAddNewEditor() {
                 WebClient client = createWebClient();
                 Editor editor = new Editor("romaindauby", "pass", "romain.dauby@gmail.com");
-                client.path("editors").post(editor);
-                Assert.assertEquals(200, client.getResponse().getStatus());
+                client.path("editors/"+editor.getLogin()).put(editor);
+                Assert.assertEquals(201, client.getResponse().getStatus());
+        }
+        
+        @Test
+        public void cantAddNewEditorWithEmptyValue() {
+                WebClient client = createWebClient();
+                Editor editor = new Editor("romaindauby", "", "romain.dauby@gmail.com");
+                client.path("editors/"+editor.getLogin()).put(editor);
+                Assert.assertEquals(400, client.getResponse().getStatus());
+        }
+        
+        @Test
+        public void cantFoundNewEditorWithEmptyLogin() {
+                WebClient client = createWebClient();
+                Editor editor = new Editor("", "pass", "romain.dauby@gmail.com");
+                client.path("editors/"+editor.getLogin()).put(editor);
+                Assert.assertEquals(404, client.getResponse().getStatus());
+        }
+        
+        @Test
+        public void cantAddNewEditorWithInvalidMail() {
+                WebClient client = createWebClient();
+                Editor editor = new Editor("coucou", "pass", "romain.dauby@toto");
+                client.path("editors/"+editor.getLogin()).put(editor);
+                Assert.assertEquals(400, client.getResponse().getStatus());
         }
         
         private WebClient createWebClient() {
