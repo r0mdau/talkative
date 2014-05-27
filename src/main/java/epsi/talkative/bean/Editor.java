@@ -7,7 +7,7 @@ public class Editor {
 	public Editor() {
 
 	}
-	
+
 	public Editor(String login, String password, String mail) {
 		this.password = password;
 		this.login = login;
@@ -23,7 +23,7 @@ public class Editor {
 	}
 
 	public String getPassword() {
-		return password;
+		return "password";
 	}
 
 	public void setPassword(String password) {
